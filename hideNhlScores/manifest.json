@@ -1,0 +1,15 @@
+{
+  "manifest_version": 2,
+
+  "name": "Hide NHL Scores",
+  "description": "This extension hides SO/OT text in NHL Game Center",
+  "version": "1.0",
+
+  "content_scripts": [
+    {
+      "matches": ["http://viasat.neulion.com/viasat/*"],
+      "run_at": "document_start",    
+      "js": ["nhlHideScores.js"]
+    }
+  ]
+}
