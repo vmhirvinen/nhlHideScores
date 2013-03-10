@@ -1,7 +1,7 @@
 nhlHideScores
 =============
 
-Chrome extension to hide OT / SO spoilers that show up in game selector sometimes even when scores are turned off
+Chrome extension to hide OT / SO spoilers in NHL Game Center that sometimes shows up in game selector even when scores are turned off
 
 <b>This version only supports NHL Game Center accessed from Viaplay http://viasat.neulion.com/viasat/gclplayer.jsp</b>
 
