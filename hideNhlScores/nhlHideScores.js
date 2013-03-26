@@ -9,11 +9,20 @@ function replaceBySelector(sel) {
 	}
 }
 
+// in addition to showing OT/SO, winner has different color, this removes class highlighting it
+function removeWinner() {
+	var nodeList = document.querySelectorAll(".winner");	
+	for (var i = 0, length = nodeList.length; i < length; i++) {     		
+		nodeList[i].className = nodeList[i].className.replace(/winner/gi, "");
+	}
+}
+
 // when some games are still live, nodes are modified after insertion
 document.addEventListener("DOMSubtreeModified", function(event) {  
 	var elem = event.target;
 	if (elem.className == 'bsc final') {
 		replaceBySelector(".offvalue");
+		removeWinner();
 	}
 	
 	if (elem && elem.nodeType == 3) {		
@@ -22,6 +31,7 @@ document.addEventListener("DOMSubtreeModified", function(event) {
 			var parent = elem.parentElement;
 			if (parent) {
 				parent.innerHTML = replaceValues(value);
+				removeWinner();
 			}
 		}
 	}
